@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour {
 
-    public int Score;
+    public int ScoreValue;
 
-    public void score(int amount)
+    public void Score(int amount)
     {
-        Score += amount;
+        ScoreValue += amount;
 
     }
 

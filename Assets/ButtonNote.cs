@@ -15,14 +15,14 @@ public class ButtonNote : MonoBehaviour
         GameManager = FindObjectOfType<GameManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) // ????? Forse questo script è quello mancante nelle note? Ma allora perché avere due script e richiamare il secondo qui?
     {
-        if (GameManager.ButtonNote == null 
+        if (GameManager.ButtonNoteManager == null // ??????? Se sono qui come è possibile che la lista sia == null?
             && Note == null 
             && other.tag == "NoteTrigger")
         {
            // GameManager.ButtonNote = this;
-            Note = other.gameObject.GetComponent<Note>();
+            Note = other.gameObject.GetComponent<Note>(); // Quindi questo script è pensato per andare nel trigger della barra nera?
             GameManager.Note = Note;
         }
     }
@@ -33,7 +33,6 @@ public class ButtonNote : MonoBehaviour
         if (other.tag == "NoteTrigger")
         {
             IsTrigger = true;
-
         }
 
     }

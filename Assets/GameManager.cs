@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int Score;
-    public List<ButtonNote> ButtonNote = new List<ButtonNote>();
+    public List<ButtonNote> ButtonNoteManager = new List<ButtonNote>();
     public Note Note;
 
     // Use this for initialization
@@ -17,23 +17,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkInput();
+        CheckInput();
     }
-    void checkInput()
+    void CheckInput()
     {
 
-        if (Input.GetKeyDown(KeyCode.A) && ButtonNote[0].IsTrigger == true)
+        if (Input.GetKeyDown(KeyCode.A) && ButtonNoteManager[0].IsTrigger == true)
+            // Quando abbiamo aggiunto qualcosa alla lista? Siamo sicuri che 0 sia l'oggetto di sinistra? 
+            // Che poi neanche abbiamo una transform legata a ButtonNote quindi sinistra di cosa?
         {
             AddScore();
-            ButtonNote[0].Note.DestroyObject();
+            ButtonNoteManager[0].Note.DestroyObject();
         }
 
-        if (Input.GetKey(KeyCode.S) && ButtonNote[1].IsTrigger == true)
+        if (Input.GetKey(KeyCode.S) && ButtonNoteManager[1].IsTrigger == true)
         {
 
         }
 
-        if (Input.GetKey(KeyCode.D) && ButtonNote[2].IsTrigger == true)
+        if (Input.GetKey(KeyCode.D) && ButtonNoteManager[2].IsTrigger == true)
         {
 
         }
