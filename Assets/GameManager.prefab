@@ -52,5 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
-  ButtonNote: {fileID: 0}
+  ButtonNoteManager: []
   Note: {fileID: 0}
